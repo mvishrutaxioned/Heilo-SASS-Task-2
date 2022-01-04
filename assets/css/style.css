@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-style: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+input[type='radio'] {
+  vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer; }
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit; }
+
+em {
+  font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle; }
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0; }
+
+sup {
+  top: -.7em; }
+
+sub {
+  bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " "; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  *zoom: 1; }
+
+/*for all*/
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+a {
+  display: inline-block;
+  text-decoration: none; }
+
+li {
+  display: inline-block;
+  list-style-type: none; }
+
+/* Common styling */
+.grey {
+  color: #666; }
+
+.cap {
+  text-transform: capitalize; }
+
+.up {
+  text-transform: uppercase; }
+
+.center {
+  text-align: center; }
+
+.bold {
+  font-weight: bold; }
+
+.transition {
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease; }
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1350px;
+  width: 86%;
+  margin: 0 auto; }
+
+/* toggleUp styling starts here */
+.toggleUp {
+  display: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-indent: -9999px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  z-index: 20;
+  -webkit-display: "none";
+  -moz-display: "none";
+  -ms-display: "none";
+  -o-display: "none";
+  display: "none";
+  -moz-justify-content: "flex-end";
+  -ms-justify-content: "flex-end";
+  -o-justify-content: "flex-end";
+  -webkit-box-pack: "flex-end";
+      -ms-flex-pack: "flex-end";
+          justify-content: "flex-end";
+  -webkit-transition: ".5s ease";
+  transition: ".5s ease"; }
+  .toggleUp::after {
+    content: '\f102';
+    padding: 10px 12px;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    opacity: .4;
+    text-indent: 0;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    text-indent: 0;
+    -webkit-transition: ".5s ease";
+    transition: ".5s ease"; }
+  .toggleUp:hover, .toggleUp:hover::after {
+    border-radius: 3px;
+    opacity: .8; }
+
+.flex {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: -webkit-box;
+  display: flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+header {
+  width: 100%;
+  padding: 32px 0;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 10; }
+  header .wrapper {
+    width: 100%;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: -webkit-box;
+    display: flex;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    header .wrapper h1 a {
+      padding-left: 20px;
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: .5px; }
+    header .wrapper h1:not(a) {
+      color: #fff;
+      font-size: 14px;
+      opacity: .8; }
+    header .wrapper #menu {
+      padding-right: 20px;
+      font-size: 14px;
+      color: #fff;
+      cursor: pointer;
+      -webkit-display: flex;
+      -moz-display: flex;
+      -ms-display: flex;
+      -o-display: flex;
+      display: -webkit-box;
+      display: flex;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      header .wrapper #menu small {
+        margin-right: 8px;
+        font-size: 0; }
+        header .wrapper #menu small::after {
+          content: '\f0c9';
+          color: #fff;
+          font-size: 14px;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 600;
+          text-indent: 0; }
+      header .wrapper #menu:hover,
+      header .wrapper #menu:hover small::after {
+        color: #a99999;
+        -webkit-transition: 0.5s ease;
+        transition: 0.5s ease; }
+    header .wrapper nav {
+      width: 100%;
+      padding: 30px 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: #fff;
+      text-align: center;
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+      -webkit-transition: 1s ease;
+      transition: 1s ease; }
+      header .wrapper nav.showNav {
+        -webkit-transform: translateY(0);
+        transform: translateY(0); }
+      header .wrapper nav ul {
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: -webkit-box;
+        display: flex;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column; }
+        header .wrapper nav ul li {
+          margin: 10px 0; }
+          header .wrapper nav ul li a {
+            color: #000;
+            -webkit-transition: 0.5s ease;
+            transition: 0.5s ease; }
+            header .wrapper nav ul li a:hover {
+              color: #a99999; }
+      header .wrapper nav #close {
+        padding: 4px 12px;
+        border-radius: 5px;
+        position: absolute;
+        top: 6%;
+        right: 2%;
+        background: #beb8b8;
+        font-weight: 600;
+        cursor: pointer;
+        -webkit-transition: 0.2s ease;
+        transition: 0.2s ease; }
+        header .wrapper nav #close:hover {
+          background: #f2f2f2; }
+
+/* banner styling starts here */
+.banner {
+  width: 100%; }
+  .banner .slide-li {
+    height: 640px;
+    position: relative;
+    text-align: center; }
+    .banner .slide-li img {
+      z-index: -10;
+      -webkit-filter: brightness(60%);
+              filter: brightness(60%); }
+    .banner .slide-li div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: #fff;
+      z-index: 20; }
+      .banner .slide-li div p {
+        padding: 25px 0;
+        color: #a99999;
+        font-size: 15px;
+        letter-spacing: 3px; }
+        .banner .slide-li div p strong {
+          color: #fff;
+          font-weight: 100; }
+      .banner .slide-li div h2 {
+        padding: 0 10px;
+        border-top: 1px solid #a99999;
+        font-size: 100px;
+        font-size: 100; }
+  .banner .slick-dots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    text-align: center; }
+    .banner .slick-dots button {
+      padding: 6px;
+      margin-right: 15px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      font-size: 0;
+      outline: none;
+      opacity: .4; }
+      .banner .slick-dots button:hover {
+        opacity: 1;
+        -webkit-transition: .5s ease;
+        transition: .5s ease; }
+    .banner .slick-dots li.slick-active button {
+      opacity: 1;
+      -webkit-transition: .5s ease;
+      transition: .5s ease; }
+
+/* section two styling starts here */
+footer {
+  background: #000; }
+  footer .wrapper {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center; }
+    footer .wrapper ul {
+      margin-bottom: 30px; }
+      footer .wrapper ul li {
+        margin: 0 10px; }
+        footer .wrapper ul li a {
+          font-size: 0; }
+          footer .wrapper ul li a.tweet::after {
+            content: '\f099';
+            color: #beb8b8;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            text-indent: 0;
+            font-family: "Font Awesome 5 Brands";
+            font-size: 25px;
+            text-indent: 0; }
+          footer .wrapper ul li a.face::after {
+            content: '\f39e';
+            color: #beb8b8;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            text-indent: 0;
+            font-family: "Font Awesome 5 Brands";
+            font-size: 25px;
+            text-indent: 0; }
+          footer .wrapper ul li a.insta::after {
+            content: '\f16d';
+            color: #beb8b8;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            text-indent: 0;
+            font-family: "Font Awesome 5 Brands";
+            font-size: 25px;
+            text-indent: 0; }
+          footer .wrapper ul li a.mail::after {
+            content: '\f0e0';
+            color: #beb8b8;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            text-indent: 0;
+            font-family: "Font Awesome 5 Brands";
+            font-size: 25px;
+            text-indent: 0;
+            font-family: "Font Awesome 5 Free"; }
+          footer .wrapper ul li a:hover::after {
+            color: #fff;
+            -webkit-transition: 0.5s ease;
+            transition: 0.5s ease; }
+    footer .wrapper span {
+      color: #beb8b8;
+      font-size: 14px; }
+/*# sourceMappingURL=style.css.map */

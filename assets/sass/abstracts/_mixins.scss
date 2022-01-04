@@ -4,6 +4,14 @@
   text-indent: 0;
 }
 
+@mixin footerIcon() {
+  color: $secondary;
+  @include icon;
+  font-family: "Font Awesome 5 Brands";
+  font-size: 25px;
+  text-indent: 0;
+}
+
 @mixin absolute() {
   position: absolute;
   top: 0;

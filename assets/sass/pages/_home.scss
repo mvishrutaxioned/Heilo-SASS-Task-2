@@ -1,0 +1,81 @@
+/* banner styling starts here */
+
+.banner {
+    width: 100%;
+
+    .slide-li {
+        height: 640px;
+        position: relative;
+        text-align: center;
+
+        img {
+            z-index: -10;
+            filter: brightness(60%);
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: #fff;
+            z-index: 20;
+
+            p {
+                padding: 25px 0;
+                color: #a99999;
+                font-size: 15px;
+                letter-spacing: 3px;
+
+                strong {
+                    color: #fff;
+                    font-weight: 100;
+                }
+            }
+
+            h2 {
+                padding: 0 10px;
+                border-top: 1px solid #a99999;
+                font-size: 100px;
+                font-size: 100;
+            }
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        left: 0;
+        text-align: center;
+
+        button {
+            padding: 6px;
+            margin-right: 15px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            font-size: 0;
+            outline: none;
+            opacity: .4;
+
+            &:hover {
+                opacity: 1;
+                transition: .5s ease;
+            }
+        }
+
+        li.slick-active button {
+            opacity: 1;
+            transition: .5s ease;
+        }
+    }
+}
+/* section two styling starts here */

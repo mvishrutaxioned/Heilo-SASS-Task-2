@@ -1,0 +1,50 @@
+footer {
+    background: $black;
+
+    .wrapper {
+        width: 100%;
+        padding: 60px 0;
+        text-align: center;
+
+        ul {
+            margin-bottom: 30px;
+            li {
+                margin: 0 10px;
+                a {
+                    font-size: 0;
+
+                    &.tweet::after {
+                        content: '\f099';
+                        @include footerIcon;
+                    }
+
+                    &.face::after {
+                        content: '\f39e';
+                        @include footerIcon;
+                    }
+
+                    &.insta::after {
+                        content: '\f16d';
+                        @include footerIcon;
+                    }
+
+                    &.mail::after {
+                        content: '\f0e0';
+                        @include footerIcon;
+                        font-family: "Font Awesome 5 Free";
+                    }
+
+                    &:hover::after {
+                        color: $white;
+                        @include vendor(transition, .5s ease);
+                    }
+                }
+            }
+        }
+
+        span {
+            color: $secondary;
+            font-size: 14px;
+        }
+    }
+}
