@@ -120,72 +120,15 @@ li {
   width: 86%;
   margin: 0 auto; }
 
-/* toggleUp styling starts here */
-.toggleUp {
-  display: none;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  text-indent: -9999px;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-  z-index: 20;
-  -webkit-display: "none";
-  -moz-display: "none";
-  -ms-display: "none";
-  -o-display: "none";
-  display: "none";
-  -moz-justify-content: "flex-end";
-  -ms-justify-content: "flex-end";
-  -o-justify-content: "flex-end";
-  -webkit-box-pack: "flex-end";
-      -ms-flex-pack: "flex-end";
-          justify-content: "flex-end";
-  -webkit-transition: ".5s ease";
-  transition: ".5s ease"; }
-  .toggleUp::after {
-    content: '\f102';
-    padding: 10px 12px;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
-    font-size: 14px;
-    opacity: .4;
-    text-indent: 0;
-    -webkit-transition: .5s ease;
-    transition: .5s ease;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-    text-indent: 0;
-    -webkit-transition: ".5s ease";
-    transition: ".5s ease"; }
-  .toggleUp:hover, .toggleUp:hover::after {
-    border-radius: 3px;
-    opacity: .8; }
-
-.flex {
-  -webkit-display: flex;
-  -moz-display: flex;
-  -ms-display: flex;
-  -o-display: flex;
-  display: -webkit-box;
-  display: flex;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
 header {
   width: 100%;
   padding: 32px 0;
   margin: 0 auto;
   position: absolute;
   z-index: 10; }
+  @media screen and (max-width: 550px) {
+    header {
+      padding: 10px 0 32px 0; } }
   header .wrapper {
     width: 100%;
     -webkit-display: flex;
@@ -241,6 +184,10 @@ header {
         color: #a99999;
         -webkit-transition: 0.5s ease;
         transition: 0.5s ease; }
+        @media screen and (max-width: 767px) {
+          header .wrapper #menu:hover,
+          header .wrapper #menu:hover small::after {
+            color: #fff; } }
     header .wrapper nav {
       width: 100%;
       padding: 30px 0;
@@ -278,6 +225,9 @@ header {
             transition: 0.5s ease; }
             header .wrapper nav ul li a:hover {
               color: #a99999; }
+              @media screen and (max-width: 767px) {
+                header .wrapper nav ul li a:hover {
+                  color: #000; } }
       header .wrapper nav #close {
         padding: 4px 12px;
         border-radius: 5px;
@@ -291,6 +241,9 @@ header {
         transition: 0.2s ease; }
         header .wrapper nav #close:hover {
           background: #f2f2f2; }
+          @media screen and (max-width: 767px) {
+            header .wrapper nav #close:hover {
+              background: #beb8b8; } }
 
 /* banner styling starts here */
 .banner {
@@ -299,36 +252,59 @@ header {
     height: 640px;
     position: relative;
     text-align: center; }
+    @media screen and (max-width: 1024px) {
+      .banner .slide-li {
+        height: auto; } }
     .banner .slide-li img {
       z-index: -10;
       -webkit-filter: brightness(60%);
               filter: brightness(60%); }
     .banner .slide-li div {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       color: #fff;
-      z-index: 20; }
+      z-index: 20;
+      -webkit-display: flex;
+      -moz-display: flex;
+      -ms-display: flex;
+      -o-display: flex;
+      display: -webkit-box;
+      display: flex;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      -o-flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
       .banner .slide-li div p {
         padding: 25px 0;
         color: #a99999;
         font-size: 15px;
         letter-spacing: 3px; }
+        @media screen and (max-width: 767px) {
+          .banner .slide-li div p {
+            font-size: 12px; } }
+        @media screen and (max-width: 550px) {
+          .banner .slide-li div p {
+            padding: 30px 0 5px 0;
+            font-size: 10px;
+            line-height: 15px;
+            letter-spacing: .3px; } }
         .banner .slide-li div p strong {
           color: #fff;
           font-weight: 100; }
@@ -337,10 +313,22 @@ header {
         border-top: 1px solid #a99999;
         font-size: 100px;
         font-size: 100; }
+        @media screen and (max-width: 767px) {
+          .banner .slide-li div h2 {
+            font-size: 60px; } }
+        @media screen and (max-width: 550px) {
+          .banner .slide-li div h2 {
+            font-size: 40px; } }
   .banner .slick-dots {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
     display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -349,6 +337,9 @@ header {
     bottom: 20px;
     left: 0;
     text-align: center; }
+    @media screen and (max-width: 767px) {
+      .banner .slick-dots {
+        bottom: 10px; } }
     .banner .slick-dots button {
       padding: 6px;
       margin-right: 15px;
@@ -358,10 +349,17 @@ header {
       font-size: 0;
       outline: none;
       opacity: .4; }
+      @media screen and (max-width: 767px) {
+        .banner .slick-dots button {
+          padding: 4px;
+          margin-right: 10px; } }
       .banner .slick-dots button:hover {
         opacity: 1;
         -webkit-transition: .5s ease;
         transition: .5s ease; }
+        @media screen and (max-width: 767px) {
+          .banner .slick-dots button:hover {
+            opacity: .4; } }
     .banner .slick-dots li.slick-active button {
       opacity: 1;
       -webkit-transition: .5s ease;
@@ -421,6 +419,9 @@ footer {
             color: #fff;
             -webkit-transition: 0.5s ease;
             transition: 0.5s ease; }
+            @media screen and (max-width: 767px) {
+              footer .wrapper ul li a:hover::after {
+                color: #beb8b8; } }
     footer .wrapper span {
       color: #beb8b8;
       font-size: 14px; }

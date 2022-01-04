@@ -37,6 +37,7 @@ footer {
                     &:hover::after {
                         color: $white;
                         @include vendor(transition, .5s ease);
+                        @include responsive($phone) { color: $secondary; }
                     }
                 }
             }

@@ -5,6 +5,8 @@ header {
     position: absolute;
     z-index: 10;
 
+    @include responsive($iphone) { padding: 10px 0 32px 0; }
+
     .wrapper {
         width: 100%;
         @include vendor(display, flex);
@@ -46,6 +48,7 @@ header {
             &:hover small::after {
                 color: $primary;
                 @include vendor(transition, .5s ease);
+                @include responsive($phone) { color: $white; }
             }
         }
 
@@ -71,9 +74,12 @@ header {
                     margin: 10px 0;
 
                     a {
-                        color: #000;
+                        color: $black;
                         @include vendor(transition, .5s ease);
-                        &:hover { color: $primary; }
+                        &:hover {
+                            color: $primary;
+                            @include responsive($phone) { color: $black; }
+                        }
                     }
                 }
             }
@@ -89,7 +95,10 @@ header {
                 cursor: pointer;
                 @include vendor(transition, .2s ease);
     
-                &:hover { background: $light; }
+                &:hover {
+                    background: $light;
+                    @include responsive($phone) { background: $secondary; }
+                }
             }
         } 
     }
